@@ -1,0 +1,76 @@
+flex Box :
+
+		################ Propriété à donner aux container :  ##################
+
+	flex direction :  row , column , row-reverse ou column-reverse
+	justify-content : flex-end , flex-start , space-beetween , space-around , space-envenly
+	align-items (vertical) : center , Baseline (meme si l'un des enfants augmente de taille son contenu respect l'alignement) , stretch (tous les enfants s'etirent suivant la taille du 				parent s'ils n'ont pas de hauteur , mais il le font suivant le sens contraire de l'axe)
+	flex-wrap : (pour dire aux enfant d'aller à la ligne)
+	
+	align-content : déjà il faut avoir un wrap ou certains sont en haut et d'autres en bas , si on le met à center ils vont ce centrer suivant la vertical et tous les enfants débuteront 			au meme top.
+
+
+
+
+
+	#########################  Propriété à donner aux items :  #########################
+
+	gap : pour mettre de espace entre les elements ( il prend deux valeurs , row et column )
+	align-self : pour positionner un element independement des autres
+	order : Pour placer les elements suivant un ordre , par defaut tous les elements en un ordre à zéro.
+	flex-grow: Pour permettre à mes items d'occuper l'espace restance de mon container quand je le mets à 1.
+		   cependant si un enfant en particulier à un flex-grow à 1 , ça veut dire qu'il prendra deux fois plus d'espace restant que ces camarades.
+	flex-shrink: par defaut il est à 1 , si on le met à zéro , les enfant pour sortir du container
+	flex-basis : definit la taille d'un item en fonction de l'axe principale
+	flex : flex-grow flex-shrink flex-basis
+
+
+
+
+Les Grids :
+
+	
+	display : grid ;
+	grid-template-columns : 300px 300px 300px
+	grid-template-rows : 300px 300px 300px  ou repeat(3,300px)
+	grid-template-rows : 1fr 2fr 1fr
+
+	.item1{
+		grid-column : 2/4
+		grid-row : 1/3
+
+		}
+
+.item1{
+		grid-column : 1/ -1
+
+		}
+
+	.item6{
+		grid-column : 3/4
+		grid-row : 1/2
+
+		}
+
+	.item6{
+		grid-column : 2 / span 2
+		}
+	grid-auto-flow : column
+	grid-auto-rows : 1fr
+	justify-content : center;
+	align-content : center;
+	place-content : center space-beetwenn ( il prend align et justify-content)
+	place-items : align et justify-items
+
+	.item6{
+		place-self : center
+		}
+
+
+	
+
+
+
+	
+	
+	
