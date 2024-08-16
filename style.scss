@@ -11,6 +11,10 @@
   transition: all 0.2s linear;
 }
 
+img{
+  user-select: none;
+}
+
 $green: #0eb582;
 $light-green: #f0fdfa;
 $light-white: #eee;
@@ -59,6 +63,30 @@ html {
 section {
   padding: 5rem 10%;
 }
+
+.heading-link{
+  text-align: center;
+  background: url(./images/banner.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  h3{
+    @include titleText(4rem)
+  }
+
+  p{
+    @include graphText(2rem);
+
+    a{
+      color: #fff;
+
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
 
 .heading{
   text-align: center;
@@ -147,6 +175,302 @@ section {
     display: none;
   }
 }
+
+
+.home-courses-slider{
+ 
+  .slide{
+    text-align: center;
+    position: relative;
+    width: 30rem;
+    background: $light-green;
+    overflow: hidden;
+
+    &:hover .content{
+      bottom: 0;
+    }
+
+    .image{
+      padding: 2rem;
+
+      img{
+        width: 100%;
+        margin-bottom: 1.5rem;
+      }
+
+      h3{
+        @include titleText(2rem);
+      }
+     
+    }
+
+    .content{
+      position: absolute;
+      bottom: -100%; right: 0; left:0;
+      background: $green;
+      padding: 2rem 3rem;
+
+      h3{
+        @include titleText(2rem);
+        color: $white;
+      }
+
+      p{
+        padding: 1rem 0;
+        @include graphText(1.5rem);
+        color: $light-white;
+      }
+
+      .btn:hover{
+        background: $black;
+      }
+    }
+  }
+}
+
+.about{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap:3rem;
+
+  .image{
+    flex: 1 1 40rem;
+    img{
+      width: 100%;
+    }
+  }
+
+  .content{
+    flex: 1 1 40rem ;
+
+    .about-title{
+      @include titleText(2.5rem);
+    }
+
+    p{
+      @include graphText(1.5rem);
+      padding: 1rem 0;
+    }
+
+    .icons-container{
+      margin-top: 1rem;
+      @include grid(16rem);
+      .icons{
+        text-align: center;
+        border: $border;
+        background: $light-green;
+        padding: 3rem 2rem;
+
+        img{
+          height: 7rem;
+          margin-bottom: .5rem;
+        }
+
+        h3{
+          padding: .5rem 0;
+          @include titleText(2.5rem);
+        }
+
+        span{
+          @include graphText(1.5rem);
+        }
+      }
+    }
+  }
+}
+
+.teachers{
+  .slide{
+    text-align: center;
+    width: 30rem;
+
+    &:hover{
+
+      .image{
+
+        img{
+          background: $green;
+        }
+
+        .share{
+          bottom: 0;
+        }
+      }
+    }
+
+    .image{
+      position: relative;
+      overflow: hidden;
+
+      img{
+        background: $light-green;
+        width: 100%;
+      }
+
+      .share{
+        position: absolute;
+        bottom: -10rem; left: 0; right: 0;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 2rem;
+
+        a{
+          font-size: 3rem;
+          margin: 0 1rem;
+          color: $white;
+
+          &:hover{
+            color: $green;
+          }
+        }
+      }
+     
+    }
+
+    .content{
+      display: flex;
+      padding-top: 2rem;
+      align-items: center;
+      justify-content: space-between;
+
+      h3{
+        @include titleText(2rem);
+      }
+
+      span{
+        @include graphText(1.5rem);
+      }
+    }
+  }
+}
+
+.reviews{
+
+  .slide{
+    text-align: center;
+   
+
+    p{
+      @include graphText(1.5rem);
+      position: relative;
+      background: $light-green;
+      border: $border;
+      margin-bottom: 3rem;
+      padding: 2rem;
+
+      &::before{
+        content: '';
+        position: absolute;
+        bottom: -1.2rem;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+        background: $light-green;
+        border-bottom: $border;
+        border-right: $border;
+        height: 2rem;
+        width: 2rem;
+      }
+    }
+
+    img{
+      height: 7rem;
+      width: 7rem;
+      border-radius: 50%;
+    }
+
+    h3{
+      @include titleText(2.2rem);
+      padding: .5rem 0;
+    }
+
+    .stars{
+      font-size: 1.2rem;
+      color: $green;
+    }
+
+  }
+}
+
+
+.courses{
+
+  .box-container{
+    @include grid(30rem);
+
+    .box{
+
+      &:hover .image img{
+        transform: scale(1.1);
+      }
+
+      &.hide{
+        display: none;
+      }
+
+      .image{
+        height: 25rem;
+        overflow: hidden;
+        position: relative;
+
+        img{
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+
+        h3{
+          @include titleText(1.5rem);
+          position: absolute;
+          top: 1rem;
+          left: 1rem;
+          padding: .5rem 1.5rem;
+          background: $white;
+        }        
+      }
+
+      .content{
+        padding: 2rem;
+        text-align: center;
+        border: $border;
+
+        h3{
+          @include titleText(2rem);
+        }
+
+        p{
+          padding: 1rem 0;
+          @include graphText(1rem)
+        }
+
+        .icons{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 2rem;
+          padding-top: 2rem;
+          border-top: $border;
+
+          span{
+            @include titleText(1.5rem);
+
+            i{
+              color: $green;
+              padding-right: .5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
 
 .footer {
   background: $light-green;
@@ -296,6 +620,10 @@ section {
 
   .heading{
     font-size: 3rem;
+  }
+
+  .about .content .about-title{
+    font-size: 4rem;
   }
 }
 
@@ -456,8 +784,28 @@ section {
       background: $light-green;
       cursor: pointer;
 
+      &:hover{
+        background: $green;
+
+        h3{
+          color: $white;
+        }
+
+        p{
+          color: $light-white;
+        }
+      }
+
       img{
         width: 10rem;
+        margin-bottom: .7rem;
+      }
+      h3{
+        @include titleText(2rem);
+        padding: .5rem 0;
+      }
+      p{
+        @include graphText(1.5rem);
       }
     }
   }
